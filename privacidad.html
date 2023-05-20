@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="Conecta perros en adopción con posibles dueños a través de nuestra red social. Encuentra tu compañero canino perfecto y bríndales un hogar lleno de amor." name="description">
+  <meta content="red social animales, adopción perros, perros en adopción, adoptar perro, refugio animales, buscar perro adoptar, compañero canino, amor y adopción" name="keywords">
+  <meta name="robots" content="follow">
+  <meta name="title" content="Doggo">
+  <meta name="copyright" content="Tepierju">
+  <meta name="author" content="Benjamin Elian Gomez">
+  <meta name="twitter:description" content="Conecta perros en adopción con posibles dueños a través de nuestra red social. Encuentra tu compañero canino perfecto y bríndales un hogar lleno de amor.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="assets/img/logo64.png">
+  <meta name="twitter:title" content="Doggo">
+  <link rel="icon" type="image/jpeg" sizes="243x207" href="assets/img/logo64.png">
+
+  <title>Doggo</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.2.4/dist/cdn.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+  <script src="https://kit.fontawesome.com/29afb26063.js" crossorigin="anonymous"></script>
+</head>
+
+<body style="font-family: 'Quicksand';background-color: black;">
+  <div class="relative overflow-hidden bg-no-repeat bg-cover"
+    style="background-position: 50%; background-image: url('assets/img/background.jpeg'); height: 400px;">
+    <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
+      style="background-color: rgba(0, 0, 0, 0.75); ">
+      <nav class="flex items-center justify-between flex-wrap bg-opacity-0 p-6">
+        <div class="flex items-center flex-shrink-0 text-white mr-6">
+          <a href="index.html"><img src="assets/img/logo64.png" style="filter: drop-shadow(0 0.1rem 0.35rem white);"
+              class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 fill-current h-8 w-8 md:h-12 md:w-12 xl:w-14 xl:h-14 mr-2"
+              alt=""></a>
+          <span class="font-semibold text-lg md:text-xl xl:text-2xl hover:text-teal-200 tracking-tight">Doggo</span>
+        </div>
+        <div class="block lg:hidden">
+          <button
+            class="flex items-center px-3 py-2 border rounded text-grey border-teal-400 hover:text-teal-200 hover:border-white">
+            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+          </button>
+        </div>
+        <div class="flex-grow"></div>
+        <div class="w-full block lg:flex lg:items-center lg:w-auto">
+          <div class="inline-block text-sm lg:flex-grow">
+            <a href="index.html#nosotros"
+              class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 block mt-4 text-lg md:text-lg xl:text-xl lg:inline-block lg:mt-0 text-white hover:text-teal-200 mr-4">
+              Nosotros
+            </a>
+            <a href="index.html#felices"
+              class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 block mt-4 text-lg md:text-lg xl:text-xl lg:inline-block lg:mt-0 text-white hover:text-teal-200 mr-4">
+              Finales felices
+            </a>
+            <div x-data="{ open: false }" @mouseleave="open = false"
+              class="relative block mt-4 lg:inline-block lg:mt-0 text-white-200 hover:text-teal-200 mr-4">
+              <!-- Dropdown toggle button -->
+              <button @mouseover="open = true" class="flex items-center block p-2">
+                <span><span class="fi fi-es"></span></span>
+                <svg class="w-6 h-6 text-white text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                  fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </button>
+
+              <!-- Dropdown menu -->
+              <div x-show="open" x-transition:enter.duration.500ms="" x-transition:leave.duration.800ms=""
+                class="absolute rounded-md" style="display: none;">
+                <a href="javascript:void(0)" onclick="Swal.fire('Próximamente','Esta función no esta todavía disponible','question')" class="hover:text-white">
+                  <span class="fi fi-it"></span>
+                </a>
+                <a href="javascript:void(0)" onclick="Swal.fire('Próximamente','Esta función no esta todavía disponible','question')" class="hover:text-white">
+                  <span class="fi fi-gb"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="flex justify-center mt-12 h-full">
+        <div class="text-center text-white px-6 md:px-12">
+          <!-- Esto de abajo es una crotada mal -->
+          <h1 style="font-family: 'Quicksand';" class="text-6xl md:text-7xl xl:text-8xl font-bold tracking-tight mb-4">
+            Encuentra amor y
+          </h1>
+          <h1 style="font-family: 'Quicksand';" class="text-6xl md:text-7xl xl:text-8xl font-bold tracking-tight mb-8">
+            compañía en Doggo.
+          </h1>
+          <!-- Esto de arriba es una crotada mal -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <section id="privacidad">
+    <div class="flex justify-center mt-28 h-full">
+      <div class="text-center text-white px-6 md:px-12">
+        <!-- Esto de abajo es una crotada mal -->
+        <h1 style="font-family: 'Quicksand';" class="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-8">
+          Política de privacidad
+        </h1>
+        <h2 class="text-md md:text-lg xl:text-xl tracking-tight mb-2">
+            En nombre de Doggo, nos comprometemos a proteger la privacidad de nuestros usuarios. Esta Política de Privacidad describe cómo recopilamos, utilizamos y protegemos la información personal que pueda proporcionarnos al utilizar nuestro landing page.
+        </h2>
+        <h1 style="font-family: 'Quicksand';" class="text-xl md:text-2xl xl:text-3xl font-bold mt-8 tracking-tight mb-8">
+            Recopilación y Uso de Información Personal
+        </h1>
+        <h2 class="text-md md:text-lg xl:text-xl tracking-tight mb-2">
+            No recopilamos ni utilizamos información personal de nuestros usuarios a menos que se registren voluntariamente en nuestro newsletter. En ese caso, solo recopilaremos y almacenaremos de forma segura la dirección de correo electrónico proporcionada con el único propósito de enviar información relacionada con Doggo y las actualizaciones de Doggo.
+        </h2>
+        <h1 style="font-family: 'Quicksand';" class="text-xl md:text-2xl xl:text-3xl font-bold mt-8 tracking-tight mb-8">
+            Protección de la Información Personal
+        </h1>
+        <h2 class="text-md md:text-lg xl:text-xl tracking-tight mb-2">
+            Nos comprometemos a proteger la información personal de nuestros usuarios y hemos implementado medidas de seguridad adecuadas para prevenir el acceso no autorizado, el uso indebido o la divulgación de dicha información.
+        </h2>
+        <h1 style="font-family: 'Quicksand';" class="text-xl md:text-2xl xl:text-3xl font-bold mt-8 tracking-tight mb-8">
+            Uso del Newsletter y Opción de Cancelación
+        </h1>
+        <h2 class="text-md md:text-lg xl:text-xl tracking-tight mb-2">
+            Si se ha registrado en nuestro newsletter, utilizaremos su dirección de correo electrónico para enviarle información relevante sobre Doggo y las actualizaciones de Doggo. Sin embargo, en cualquier momento, tendrá la opción de cancelar su suscripción a través del enlace de cancelación proporcionado en cada correo electrónico recibido o ingresando nuevamente su dirección de correo electrónico en la sección del newsletter.
+        </h2>
+        <h1 style="font-family: 'Quicksand';" class="text-xl md:text-2xl xl:text-3xl font-bold mt-8 tracking-tight mb-8">
+            Divulgación de Información a Terceros
+        </h1>
+        <h2 class="text-md md:text-lg xl:text-xl tracking-tight mb-2">
+            No compartiremos, venderemos ni alquilaremos su información personal a terceros sin su consentimiento expreso, excepto cuando así lo exija la ley o en caso de que creamos de buena fe que dicha divulgación es necesaria para proteger nuestros derechos legales o cumplir con un proceso legal.
+        </h2>
+        <h1 style="font-family: 'Quicksand';" class="text-xl md:text-2xl xl:text-3xl font-bold mt-8 tracking-tight mb-8">
+            Enlaces Externos
+        </h1>
+        <h2 class="text-md md:text-lg xl:text-xl tracking-tight mb-2">
+            Nuestro landing page puede contener enlaces a sitios web externos. No somos responsables de las prácticas de privacidad o el contenido de dichos sitios web. Le recomendamos que revise las políticas de privacidad de los sitios web externos antes de proporcionar cualquier información personal.
+        </h2>
+        <h1 style="font-family: 'Quicksand';" class="text-xl md:text-2xl xl:text-3xl font-bold mt-8 tracking-tight mb-8">
+            Cambios a esta Política de Privacidad
+        </h1>
+        <h2 class="text-md md:text-lg xl:text-xl tracking-tight mb-2">
+            Nos reservamos el derecho de modificar esta Política de Privacidad en cualquier momento. Cualquier cambio se publicará en esta página con una fecha actualizada. Le recomendamos que revise periódicamente esta Política de Privacidad para mantenerse informado sobre cómo protegemos su información personal.
+        </h2>
+        <h2 class="text-md md:text-lg xl:text-xl tracking-tight mb-2">
+            Si tiene alguna pregunta o inquietud sobre nuestra Política de Privacidad, no dude en ponerse en contacto con nosotros a través de contact@doggo.ar.
+        </h2>
+        <h3 class="text-xs md:text-sm xl:text-md tracking-tight mb-32">
+            Fecha de entrada en vigencia: 19 de mayo de 2023
+        </h3>
+        <!-- Esto de arriba es una crotada mal -->
+      </div>
+    </div>
+  </section>
+  <footer style="background-color: #0F212B;" aria-label="Site Footer" class="bg-white">
+    <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-8 lg:gap-8">
+        <div class="text-white col-span-2">
+          <span class="font-semibold text-lg md:text-xl xl:text-2xl hover:text-teal-200 tracking-tight">Doggo</span>
+          <p class="mt-4 text-white text-lg">
+            Uniendo perros abandonados
+          </p>
+          <p class="text-white text-lg">
+            con familias amorosas en Doggo.
+          </p>
+        </div>
+
+        <div class="col-start-6 col-span-3 mt-8 gap-8 lg:mt-0 lg:gap-y-16">
+          <form class="w-full">
+            <label
+              class="font-semibold text-white text-lg md:text-xl xl:text-2xl hover:text-teal-200 tracking-tight">Newsletter</label>
+            <div class="p-2 border-b border-gray-100 mt-4 focus-within:ring sm:flex sm:items-center sm:gap-4">
+              <input style="background-color: rgba(255, 255, 255, 0);" type="email" id="UserEmail"
+                placeholder="Ingresa tu email aqui"
+                class="w-full border-none focus:border-transparent focus:ring-transparent sm:text-sm" />
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="mt-32 text-white text-md border-t border-gray-100 pt-8">
+        <div class="sm:flex sm:justify-between">
+          <p class="">
+            2023. Tepierju. Sin derechos.
+          </p>
+
+          <nav aria-label="Footer Navigation - Support" class="mt-8 sm:mt-0">
+            <ul class="flex flex-wrap justify-start gap-4 lg:justify-end">
+              <li>
+                <a href="privacidad.html" class=" transition hover:opacity-75">
+                  Política de privacidad
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
